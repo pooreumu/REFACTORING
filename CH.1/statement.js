@@ -1,4 +1,4 @@
-function statement(invoice, plays) {
+module.exports = function statement(invoice, plays) {
     let totalAmount = 0
     let volumeCredits = 0
     let result = `청구내역 (고객명: ${invoice.customer})\n`
@@ -55,10 +55,3 @@ function statement(invoice, plays) {
 
     return result
 }
-
-const invoices = require('./invoices.json')
-const plays = require('./plays.json')
-
-const statements = invoices.map((invoice) => statement(invoice, plays))
-
-console.log({ statements })
