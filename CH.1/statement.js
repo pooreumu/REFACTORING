@@ -10,7 +10,7 @@ module.exports = function statement(invoice, plays) {
     }).format
 
     for (let perf of invoice.performances) {
-        let thisAmount = amountFor(perf, playFor(perf))
+        let thisAmount = amountFor(perf)
 
         // 포인트를 적립한다.
         volumeCredits += Math.max(perf.audience - 30, 0)
@@ -31,7 +31,7 @@ module.exports = function statement(invoice, plays) {
 
     return result
 
-    function amountFor(aPerformance, play) {
+    function amountFor(aPerformance) {
         let result = 0
 
         switch (playFor(aPerformance).type) {
