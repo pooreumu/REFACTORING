@@ -4,7 +4,7 @@ module.exports = function statement(invoice, plays) {
     return renderPlainText(createStatementData(invoice, plays))
 }
 
-function renderPlainText(data, plays) {
+function renderPlainText(data) {
     let result = `청구내역 (고객명: ${data.customer})\n`
 
     for (let perf of data.performances) {
