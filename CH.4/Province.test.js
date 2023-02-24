@@ -1,10 +1,17 @@
 const { Province } = require('./Province')
 const { sampleProvinceData } = require('./sampleProvinceData')
-const assert = require('assert')
+const { expect } = require('chai')
 
 describe('province', () => {
+    let asia
+    beforeEach(() => {
+        asia = new Province(sampleProvinceData())
+    })
     it('shortfall', () => {
-        const asia = new Province(sampleProvinceData())
-        assert.equal(asia.shortfall, 5)
+        expect(asia.shortfall).equal(5)
+    })
+
+    it('profit', () => {
+        expect(asia.profit).equal(230)
     })
 })
